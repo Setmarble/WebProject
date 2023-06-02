@@ -1,0 +1,200 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>게임 사이트</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            background-color: #f9f9f9;
+            margin: 0;
+        }
+
+        .head {
+            display: flex;
+            align-items: center;
+            margin: 5px;
+        }
+
+        .head h1 {
+            margin-left: 10px;
+        }
+
+        .auth-button {
+            display: inline-block;
+            background-color: #007bff;
+            color: #fff;
+            text-decoration: none;
+            padding: 10px 20px;
+            border-radius: 3px;
+            transition: background-color 0.3s;
+            margin-right: 10px;
+        }
+
+        .auth-button:hover {
+            background-color: #0056b3;
+        }
+
+        .auth-buttons {
+            margin-left: auto;
+            text-align: right;
+        }
+
+        .main {
+            display: flex;
+            margin: 15px;
+        }
+
+        .container {
+            float: left;
+            margin: 5px;
+            margin-right: 10px;
+            min-height: 900px;
+            flex: 7;
+        }
+
+        .user {
+            float: left;
+            margin: 5px;
+            min-width: 300px;
+            min-height: 900px;
+            flex: 3;
+            display: flex;
+            flex-direction: column;
+            align-items: stretch;
+
+        }
+
+        .game-list {
+            flex-direction: column;
+        }
+
+        .game {
+            min-width: 900px;
+            width: 80%;
+            max-height: 350px;
+            background-color: #fff;
+            border-radius: 5px;
+            box-shadow: 0 2px 6px rgba(0, 0, 0, 0.5);
+            padding: 20px;
+            margin: 10px;
+            display: flex;
+        }
+
+        .game-image {
+            margin-left: auto;
+            border: 1px solid black;
+        }
+
+        .game-title {
+            font-size: 24px;
+            font-weight: bold;
+            color: #333;
+            margin: 0;
+        }
+
+        .game-description {
+            color: #777;
+            margin-top: 10px;
+        }
+
+        .game-link {
+            width: auto;
+            display: inline-block;
+            background-color: #007bff;
+            color: #fff;
+            text-decoration: none;
+            padding: 10px 20px;
+            border-radius: 3px;
+            transition: background-color 0.3s;
+            margin-top: 5rem;
+        }
+
+        .game-link:hover {
+            background-color: #0056b3;
+        }
+
+        .header-title {
+            transition: transform 0.3s, color 0.2s;
+        }
+
+        .header-title:hover {
+            transform: translateX(5px);
+            color: brown;
+        }
+        
+        .interface {
+            align-items: center;
+            flex: 4;
+        }
+
+        .ranking {
+            align-items: center;
+            flex: 6;
+        }
+    </style>
+</head>
+
+<body>
+    <div class="main>">
+        <div class="container">
+            <div class="head">
+                <a href="main2.html"><img
+                        src="https://search.pstatic.net/common/?src=http%3A%2F%2Fcafefiles.naver.net%2FMjAxNzA2MDhfODgg%2FMDAxNDk2OTEyMjY5ODg4.Hgoxq5rpaOknXd6OEItyQC_x2oNVs8EZK__9LaMFHBog.M1l1NUm7GbGRN1BIzyPx2NsSMRFwFq1QsHM8yaMuGqsg.JPEG.bryan311%2Fdownloadfile-21.jpg&type=sc960_832"
+                        width="150px" height="100px" alt="logo"></a>
+                <h1 class="header-title">셋마블</h1>
+                <div class="auth-buttons">
+                    <a href="login.html" class="auth-button">로그인</a>
+                    <a href="join.html" class="auth-button">회원가입</a>
+                </div>
+            </div>
+
+            <div class="game-list">
+                <div class="game"> 
+                    <div class="game-about">
+                        <h2 class="game-title">게임 1</h2>
+                        <p class="game-description">게임 1의 설명입니다.<br>설명이라고</p>
+                        <a href="game2.html" class="game-link">게임 1 실행하기</a>
+                    </div>
+                    <img src="img1.png" alt="게임 1 이미지" class="game-image">
+                </div>
+
+                <div class="game">
+                    <div class="game-about">
+                        <h2 class="game-title">게임 2</h2>
+                        <p class="game-description">게임 2의 설명입니다.</p>
+                        <a href="game2.html" class="game-link">게임 2 실행하기</a>
+                    </div>
+                    <img src="img1.png" alt="게임 2 이미지" class="game-image">
+                </div>
+
+                <div class="game">
+                    <div class="game-about">
+                        <h2 class="game-title">게임 3</h2>
+                        <p class="game-description">게임 3의 설명</p>
+                        <a href="game2.html" class="game-link">게임 3 실행하기</a>
+                    </div>
+                    <img src="img1.png" alt="게임 3 이미지" class="game-image">
+                </div>
+            </div>
+        </div>
+        <div class="user">
+            <div class="interface">
+                <p>이름 : </p>
+            </div>
+            <div class="ranking">
+                <h2>랭킹</h2>
+                <ol>
+                    <li>score</li>
+                    <li>score</li>
+                    <li>score</li>
+                </ol>
+            </div>
+
+        </div>
+    </div>
+</body>
+
+</html>
