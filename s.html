@@ -1,0 +1,26 @@
+<!DOCTYPE html>
+<html lang="en">
+    <head>
+        <meta charset="UTF-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        <title>main</title>
+
+    </head>
+<body>
+    <h1>Value:</h1>
+    <div id="output"></div>
+    <script>
+        window.onload = function() {
+            // URL에서 GET 변수 추출
+            const urlParams = new URLSearchParams(window.location.search);
+            
+            // 변수명을 통해 값 가져오기
+            const myVariable = urlParams.get('maxscore');
+            
+            // 값을 화면에 출력
+            const outputElement = document.getElementById('output');
+            outputElement.innerText = myVariable;
+        }
+    </script>
+</body>
+</html>

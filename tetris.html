@@ -1,0 +1,31 @@
+<!DOCTYPE html>
+<html lang="en">
+    <head>
+        <meta charset="UTF-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        <title>Tetris</title>
+        <link rel="stylesheet" href="tetris.css"/>
+
+    </head>
+<body>
+    <a href="/main2.html"><img src="">메인으로</a>
+    <h1 id="Title">Tetris</h1>
+    <!-- <form id="myForm" action="/s.html" method="get">
+        <input id="maxscoreInput" type="hidden" name="maxscore" value="">
+        <input id="IdInput" type="hidden" name="id" value=""> 
+        <input type="button" onclic k="submitForm()" value="메인으로 돌아가기"></input>
+    </form> -->
+    <canvas id="otherPiece" width="120" height="120"></canvas> <!-- 저장한 블록-->
+    <canvas id="gameCanvas" width="300" height="600"></canvas> <!-- 게임 화면-->
+    <canvas id="nextGrid" width="144" height="315"></canvas> <!-- 다음에 나올 블록-->
+    <div id="GameTips"> <!-- 게임 방법-->
+        <ol id="tips">
+            <li>이동 :<br>→↑↓←</li>
+            <li>회전 : Z</li>
+            <li>블록저장 : C</li>
+            <li>바로놓기 : Space</li>
+        </ol>
+    </div>
+    <script src="tetris.js"></script>
+</body>
+</html>

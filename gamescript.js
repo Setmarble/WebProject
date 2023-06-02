@@ -336,7 +336,7 @@ function drawText() {
 	ctx.textAlign = "left";
 	ctx.fillText("Life : " + player.life, 10, 30);
 	ctx.textAlign = "right";
-	ctx.fillText("Score : " + mobcount, canvas.width - 10, 30);
+	ctx.fillText("Score : " + score, canvas.width - 10, 30);
 	ctx.closePath();
 }		//위쪽에 목숨, 점수를 그리는 함수
 
