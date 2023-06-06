@@ -1,0 +1,23 @@
+ .content {
+    width : 1002px;
+    height : auto;
+    margin-top : 15px;
+    border : solid 1px black;
+  }
+  
+  /* 상단 게임 이름 */
+  .top {
+    text-align : left;
+    padding : 15px;
+    background-color: #cccccc;
+  }
+  
+  h3 {
+    display:inline-block;
+  }
+  /* 하단 조작키 설명 */
+  .bottom {
+    text-align : center;
+    padding : 30px;
+    background-color: #cccccc;
+  }
