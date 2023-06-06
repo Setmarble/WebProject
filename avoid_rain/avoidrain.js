@@ -35,6 +35,7 @@ let maxscore=0;
           raincount = 12;
           rainspeed = 5;
           difficulty = "easy";
+          gamestart = 0;
           gameStart();
         }
       }
@@ -62,7 +63,7 @@ let maxscore=0;
         }
       }
 
-      // 비
+      // 비 
       class Rain {
         constructor() {
           this.x = Math.random() * canvas.width,
@@ -123,6 +124,7 @@ let maxscore=0;
 
 
       // 변수 설정
+      var gamestart = 0;
       var difficulty; // 난이도
       var score ; // 점수
       var lifes = 0; // 생명
@@ -137,7 +139,7 @@ let maxscore=0;
       function gameStart() {
         // 변수 초기화
         score =0; // 점수
-        lifes = 1; // 생명
+        lifes = 3; // 생명
         rains = [];
         rectX = 0;
         timer = 0;
@@ -149,7 +151,9 @@ let maxscore=0;
           var rain = new Rain();
           rains.push(rain);
           var difficulty=250*1000/(1000+score);
-          setTimeout(setdiffuculty,difficulty);
+          if(gamestart == 0){
+            setTimeout(setdiffuculty,difficulty);
+          }
         }
         //그리기
         function draw() {
@@ -213,6 +217,7 @@ let maxscore=0;
             //생명이 0개일 때
             if (lifes == 0) {
               clearInterval(game,setdiffuculty);
+              gamestart = 1;
               gameOver();
             }
           }

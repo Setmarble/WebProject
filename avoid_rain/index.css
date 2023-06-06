@@ -1,10 +1,19 @@
  .content {
     width : 1002px;
     height : auto;
-    margin-top : 15px;
+    margin-left: 50px;
     border : solid 1px black;
   }
   
+  input{
+    position:relative;
+    left:800px;
+  }
+
+  #container {
+    width: 1100px;
+  }
+
   /* 상단 게임 이름 */
   .top {
     text-align : left;
@@ -15,6 +24,7 @@
   h3 {
     display:inline-block;
   }
+
   /* 하단 조작키 설명 */
   .bottom {
     text-align : center;
