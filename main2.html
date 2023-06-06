@@ -47,21 +47,18 @@
         .container {
             float: left;
             margin: 5px;
-            margin-right: 10px;
-            min-height: 900px;
             flex: 7;
+            
         }
 
         .user {
-            float: left;
             margin: 5px;
-            min-width: 300px;
-            min-height: 900px;
             flex: 3;
             display: flex;
             flex-direction: column;
             align-items: stretch;
-
+            
+              
         }
 
         .game-list {
@@ -72,8 +69,7 @@
         .game {
             min-width: 900px;
             width: 80%;
-            min-height: 350px;
-            max-height: 350px;
+
             background-color: #fff;
             border-radius: 5px;
             box-shadow: 0 2px 6px rgba(0, 0, 0, 0.5);
@@ -142,13 +138,19 @@
 
 <body>
     <div class="main>">
-        <div class="container">
-            <div class="head">
-                <a href="main2.html">
-                    <img src="./Image/Logo/Logo.png"
-                        width="225px" alt="logo;">
-                </a>
+        <div class="head">
+            <a href="main2.html">
+                <img src="./Image/Logo/Logo.png"
+                    width="225px" alt="logo;">
+            </a>
+
+            <div class="auth-buttons">
+                <a href="./login_and_register/login.html" class="auth-button">로그인</a>
+                <a href="./login_and_register/register.html" class="auth-button">회원가입</a>
             </div>
+        </div>
+        <div class="container">
+
 
             <div class="game-list">
                 <div class="game"> 
@@ -189,10 +191,7 @@
         </div>
         <div class="user">
             <div class="interface">
-                <div class="auth-buttons">
-                    <a href="./login_and_register/login.html" class="auth-button">로그인</a>
-                    <a href="./login_and_register/register.html" class="auth-button">회원가입</a>
-                </div>
+
                 <p>이름 : </p>
             </div>
             <div class="ranking">
