@@ -180,5 +180,21 @@ hr{
     align-items: center;
     background-color: white;
 }
-.table 
+.table th{
+    background-color: #f0e100;
+
+    border:3px solid #5c3e00;
+}
+
+.table tr, td{
+    
+    color:#3a3629;
+    border:0px;
+    padding: 5px;
+    border-radius: 5px;
+    box-shadow: 0 2px 6px rgba(0, 0, 0, 0.5);
+}
+.table tr{
+    border:0px;
+}
 
