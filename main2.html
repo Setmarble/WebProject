@@ -14,9 +14,9 @@
 
         .head {
             display: flex;
+            flex: 1;
             align-items:start;
             margin: 5px;
-           
         }
 
         .auth-button {
@@ -45,10 +45,9 @@
         }
 
         .container {
-            float: left;
+            display: flex;
             margin: 5px;
             flex: 7;
-            
         }
 
         .user {
@@ -57,13 +56,15 @@
             display: flex;
             flex-direction: column;
             align-items: stretch;
-            
-              
+            border: 1px solid black;
         }
 
         .game-list {
             display: flex;
             flex-direction: column;
+            flex: 7;
+            border: 1px solid black;
+
         }
 
         .game {
@@ -150,8 +151,6 @@
             </div>
         </div>
         <div class="container">
-
-
             <div class="game-list">
                 <div class="game"> 
                     <div class="game-about">
@@ -188,22 +187,22 @@
                     </div>
                 </div>
             </div>
-        </div>
-        <div class="user">
-            <div class="interface">
-
-                <p>이름 : </p>
+            <div class="user">
+                <div class="interface">
+                    <p>이름 : </p>
+                </div>
+                <div class="ranking">
+                    <h2>랭킹</h2>
+                    <ol>
+                        <li>score</li>
+                        <li>score</li>
+                        <li>score</li>
+                    </ol>
+                </div>
+    
             </div>
-            <div class="ranking">
-                <h2>랭킹</h2>
-                <ol>
-                    <li>score</li>
-                    <li>score</li>
-                    <li>score</li>
-                </ol>
-            </div>
-
         </div>
+        
     </div>
 </body>
 
