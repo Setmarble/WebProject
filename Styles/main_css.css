@@ -173,3 +173,12 @@ hr{
     font-size: 25px;
     border: 1px;
 }
+
+.table{
+    display:flex;
+    justify-content: center;
+    align-items: center;
+    background-color: white;
+}
+
+.
