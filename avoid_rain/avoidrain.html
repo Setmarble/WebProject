@@ -12,8 +12,9 @@
 
 <a href=""><img src="">메인으로</a>
 <h1>비 피하기</h1>
-<form action="" method="GET">
-  <Button type botton>메인으로 돌아가기</Button>
+<form action="../s.html" method="GET">
+  <input id="maxscoreInput" type="hidden" name="avoidrainmaxscore" value="">
+  <Button type= "botton" onclick="submitForm()" value="메인으로 돌아가기">메인으로 돌아가기</Button>
 </form>
 <div class="content">
   
@@ -161,7 +162,7 @@
       function gameStart() {
         // 변수 초기화
         score =0; // 점수
-        lifes = 1; // 생명
+        lifes = 10000; // 생명
         rains = [];
         rectX = 0;
         timer = 0;
@@ -182,8 +183,6 @@
 
           // 남은 생명
           life();
-          // 선택한 난이도
-          difficultyView();
           // 점수 표시
           scoreView();
 
@@ -262,6 +261,15 @@
     maxscore = score;
   }
   context.fillText("Your max score is " + maxscore, canvas.width / 2 - 100, canvas.height / 2 + 180);
+}
+function submitForm() {
+    // ���� ���� �������� ����
+    const form = document.getElementById('myForm');
+    const input = document.getElementById('maxscoreInput');
+    input.value = maxscore;
+
+    // �� ����
+    form.submit();
 }
 
     </script>
