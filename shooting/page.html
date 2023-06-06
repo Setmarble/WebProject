@@ -1,5 +1,5 @@
 <!DOCTYPE html>
-<html lang="en">
+<html>
 <head>
   <meta charset="UTF-8">
   <title>GamePage</title>
@@ -11,12 +11,10 @@
 <body>
   <header>
     <h5>Gamepage</h5>
-    <ul class="menu">
-      <li>Main</li>
-      <li>About</li>
-      <li>Info</li>
-      <li>>Game</li>
-    </ul>
+    <form id="myForm" action="../s.html" method="get">
+      <input id="maxscoreInput" type="hidden" name="shootingmaxscore" value="">
+      <input type="button" onclick="submitForm()" value="메인으로 돌아가기"></input>
+  </form>
     <hr style="border-width: 3px;">
   </header>
 

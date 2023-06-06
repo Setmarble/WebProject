@@ -3,22 +3,6 @@ header h5{
   margin: 0;
 }
 
-.menu {
-  list-style-type: none;
-  margin: 0; padding: 0;
-  overflow: hidden;
-  display: flex;
-  justify-content: center;
-}
-
-.menu li {
-  margin-right: 1em;
-}
-
-.menu li:last-child {
-  margin-right: 0;
-}
-
 body {
   background-color: beige;
 }

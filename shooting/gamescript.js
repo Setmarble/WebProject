@@ -32,6 +32,7 @@ const keys = {
 
 var gamestart = false;	//게임 시작여부
 var score = 0;		//점수
+var maxscore = 0;
 var target = 500;		//보스페이즈까지 목표 몹수
 var bullets = [];		//공격 배열
 var mobs = [];		//몹 배열
@@ -345,6 +346,7 @@ function drawStart() {
 	ctx.fillStyle = "black";
 	ctx.textAlign = "center";
 	ctx.fillText("Space를 누르면 시작", canvas.width / 2, canvas.height / 2);			/////최고점수 만들기
+	ctx.fillText("최고점수: " + maxscore, canvas.width / 2, canvas.height / 2 + 100);
 	ctx.closePath();
 }		//시작 전 메시지를 그리는 함수
 
@@ -499,3 +501,13 @@ function startGame() {
 
 	draw();
 }		//스페이스바를 누르면 게임실행 변수를 true로 바꾸고, draw함수 실행
+
+function submitForm() {
+    // 폼의 값을 동적으로 설정
+    const form = document.getElementById('myForm');
+    const input = document.getElementById('maxscoreInput');
+    input.value = maxscore;
+
+    // 폼 제출
+    form.submit();
+}
