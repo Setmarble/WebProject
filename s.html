@@ -6,23 +6,23 @@
         <title>main</title>
 
     </head>
-<body>
-    <h1>Value:</h1>
-    <div id="output"></div>
-    <script>
-        window.onload = function() {
-            // URL에서 GET 변수 추출
-            const urlParams = new URLSearchParams(window.location.search);
-            
-            // 변수명을 통해 값 가져오기
-            const tetrismax = urlParams.get('tetrismaxscore');
-            const avoidmax = urlParams.get('avoidrainmaxscore');
-            const shootingmax = urlParams.get('shootingmaxscore');
-            
-            // 값을 화면에 출력
-            const outputElement = document.getElementById('output');
-            outputElement.innerText = tetrismax + avoidmax + shootingmax;
-        }
-    </script>
-</body>
+    <body>
+        <h1>Value:</h1>
+        <div id="output"></div>
+        <script>
+            window.onload = function() {
+                // URL에서 GET 변수 추출
+                const urlParams = new URLSearchParams(window.location.search);
+                
+                // 변수명을 통해 값 가져오기
+                const tetrismax = urlParams.get('tetrismaxscore');
+                const avoidmax = urlParams.get('avoidrainmaxscore');
+                const shootingmax = urlParams.get('shootingmaxscore');
+                
+                // 값을 화면에 출력
+                const outputElement = document.getElementById('output');
+                outputElement.innerText = tetrismax + avoidmax + shootingmax;
+            }
+        </script>
+    </body>
 </html>
