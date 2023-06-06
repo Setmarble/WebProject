@@ -8,13 +8,12 @@
 
     </head>
 <body>
-    <a href="/main2.html"><img src="">메인으로</a>
+    <a href="../s.html"><img src="">메인으로</a>
     <h1 id="Title">Tetris</h1>
-    <!-- <form id="myForm" action="/s.html" method="get">
-        <input id="maxscoreInput" type="hidden" name="maxscore" value="">
-        <input id="IdInput" type="hidden" name="id" value=""> 
-        <input type="button" onclic k="submitForm()" value="메인으로 돌아가기"></input>
-    </form> -->
+    <form id="myForm" action="../s.html" method="get">
+        <input id="maxscoreInput" type="hidden" name="tetrismaxscore" value="">
+        <input type="button" onclick="submitForm()" value="메인으로 돌아가기"></input>
+    </form>
     <canvas id="otherPiece" width="120" height="120"></canvas> <!-- 저장한 블록-->
     <canvas id="gameCanvas" width="300" height="600"></canvas> <!-- 게임 화면-->
     <canvas id="nextGrid" width="144" height="315"></canvas> <!-- 다음에 나올 블록-->

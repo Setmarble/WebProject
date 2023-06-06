@@ -553,9 +553,7 @@ function submitForm() {
     // 폼의 값을 동적으로 설정
     const form = document.getElementById('myForm');
     const input = document.getElementById('maxscoreInput');
-    const idinput = document.getElementById('IdInput');
     input.value = maxscore;
-    idinput.value = "Test1213";
 
     // 폼 제출
     form.submit();
