@@ -1,0 +1,28 @@
+* {
+    color: #000000;
+}
+
+#Title {
+    margin-left: 10px;
+}
+
+#container {
+    background-color: #FFFFFF   ;
+}
+
+body {
+    background-color: #e5e5e5;
+}
+
+.grid{
+    border: 1px solid #3f3f3f;
+}
+
+input{
+    border: 1px solid #5c3e00;
+    border-radius: 20px;
+    margin: 5px;
+    padding: 5px;
+    background-color: #f9e100;
+    color: #3a3629;
+}

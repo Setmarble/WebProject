@@ -1,37 +1,29 @@
-body {
-    background-color: black;
-}
-
-#Title {
-    color: white;
-}
-
 #otherPiece {
-    border: 1px solid white;
     position: absolute;
     left: 50px;
 }
 
+#container{
+    width: 670px;
+    height: 800px;
+}
+
 #gameCanvas {
-    border: 1px solid white;
     position: absolute;
     left: 180px;
 }
 
 #nextGrid {
-    border: 1px solid white;
     position: absolute;
     left: 490px;
 }
 
 #GameTips {
-    border: 1px solid white;
     position: absolute;
     left: 490px;
-    top: 465px;
+    top: 510px;
     width: 144px;
     height: 155px;
-    color: white;
 }
 
 #tips {

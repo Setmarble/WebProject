@@ -5,26 +5,33 @@
         <meta name="viewport" content="width=device-width, initial-scale=1.0">
         <title>Tetris</title>
         <link rel="stylesheet" href="tetris.css"/>
+        <link rel="stylesheet" href="../Styles/GameCss.css"/>
 
     </head>
 <body>
-    <a href="../s.html"><img src="">메인으로</a>
-    <h1 id="Title">Tetris</h1>
-    <form id="myForm" action="../s.html" method="get">
-        <input id="maxscoreInput" type="hidden" name="tetrismaxscore" value="">
-        <input type="button" onclick="submitForm()" value="메인으로 돌아가기"></input>
-    </form>
-    <canvas id="otherPiece" width="120" height="120"></canvas> <!-- 저장한 블록-->
-    <canvas id="gameCanvas" width="300" height="600"></canvas> <!-- 게임 화면-->
-    <canvas id="nextGrid" width="144" height="315"></canvas> <!-- 다음에 나올 블록-->
-    <div id="GameTips"> <!-- 게임 방법-->
-        <ol id="tips">
-            <li>이동 :<br>→↑↓←</li>
-            <li>회전 : Z</li>
-            <li>블록저장 : C</li>
-            <li>바로놓기 : Space</li>
-        </ol>
+    <a href="main2.html" onclick="submitForm()">
+        <img src="../Image/Logo/Logo.png"
+            width="225px" alt="logo;">
+    </a>
+    <div id="container">
+        <h1 id="Title">Tetris</h1>
+        <form id="myForm" action="../s.html" method="get">
+            <input id="maxscoreInput" type="hidden" name="tetrismaxscore" value="">
+            <input type="button" onclick="submitForm()" value="메인으로 돌아가기"></input>
+        </form>
+        <canvas class="grid" id="otherPiece" width="120" height="120"></canvas> <!-- 저장한 블록-->
+        <canvas class="grid" id="gameCanvas" width="300" height="600"></canvas> <!-- 게임 화면-->
+        <canvas class="grid" id="nextGrid" width="144" height="315"></canvas> <!-- 다음에 나올 블록-->
+        <div class="grid" id="GameTips"> <!-- 게임 방법-->
+            <ol id="tips">
+                <li>이동 :<br>→↑↓←</li>
+                <li>회전 : Z</li>
+                <li>블록저장 : C</li>
+                <li>바로놓기 : Space</li>
+            </ol>
+        </div>
     </div>
+    
     <script src="tetris.js"></script>
 </body>
 </html>
