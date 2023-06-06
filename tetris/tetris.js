@@ -55,7 +55,7 @@ drawStart();
 function drawStart() {
     ctx.beginPath();
     ctx.font = '15px Arial';
-    ctx.fillStyle = 'white';
+    ctx.fillStyle = 'black';
     ctx.textAlign = 'center';
     ctx.fillText('Press S to start Game', canvas.width /2 , canvas.height/2);
     ctx.fillText('Your max Score : ' + maxscore, canvas.width/2, canvas.height/2+100);
@@ -131,14 +131,14 @@ function drawGrid() {
             if (grid[row][col]) {
                 drawSquare(col, row);
             } else {
-                drawSquare(col, row,'black','#222222');
+                drawSquare(col, row,'#E5E5E5','#cccccc');
             }
         }
     }
 }
 
 // 정사각형 그리기
-function drawSquare(x, y, color = 'white', strokecolor = 'black') {
+function drawSquare(x, y, color = '#333333', strokecolor = '#cccccc') {
     const squareSize = canvas.width / cols;
     const squareX = x * squareSize;
     const squareY = y * squareSize;
@@ -159,7 +159,7 @@ function drawPiece() {
     for (let row = 0; row < piece.length; row++) {
         for (let col = 0; col < piece[row].length; col++) {
             if (piece[row][col]) {
-                drawSquare(pieceX + col, pieceY + row, pieceColor,'white');
+                drawSquare(pieceX + col, pieceY + row, pieceColor,'#777777');
             }
         }
     }
@@ -192,7 +192,7 @@ function drawNextSquare(x, y, color) {
 
     nextctx.fillStyle = color;
     nextctx.fillRect(nextsquareX, nextsquareY, squareSize, squareSize);
-    nextctx.strokeStyle = 'white';
+    nextctx.strokeStyle = 'black';
     nextctx.strokeRect(nextsquareX, nextsquareY, squareSize, squareSize);
 }
 
@@ -222,7 +222,7 @@ function drawSaveSquare(x, y, color) {
 
     savectx.fillStyle = color;
     savectx.fillRect(nextsquareX, nextsquareY, squareSize, squareSize);
-    savectx.strokeStyle = 'white';
+    savectx.strokeStyle = 'black';
     savectx.strokeRect(nextsquareX, nextsquareY, squareSize, squareSize);
 }
 
@@ -231,7 +231,7 @@ function drawSaveSquare(x, y, color) {
 // 점수 그리기
 function drawScore() {
     ctx.font = '20px Arial';
-    ctx.fillStyle = 'white';
+    ctx.fillStyle = 'black';
     ctx.textAlign = 'left';
     ctx.fillText('Score: ' + score, 10, 30);
 }
@@ -414,7 +414,7 @@ function generateRandomPiece() {
                 [0, 1, 1],
                 [1, 1, 0]
             ],
-            color: 'green'
+            color: 'lightgreen'
         },
         {
             shape: [

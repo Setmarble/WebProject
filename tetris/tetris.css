@@ -21,7 +21,7 @@
 #GameTips {
     position: absolute;
     left: 490px;
-    top: 510px;
+    top: 470px;
     width: 144px;
     height: 155px;
 }
@@ -35,4 +35,9 @@
 #tips li {
     padding-bottom: 10px;
     margin-bottom: 0px;
+}
+
+input {
+    position: relative;
+    left: 400px;
 }
