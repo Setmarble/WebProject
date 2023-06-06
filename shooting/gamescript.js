@@ -3,7 +3,7 @@ const ctx = canvas.getContext("2d");
 
 /*----------------------------선언부------------------------*/
 
-const player = {
+let player = {
 	x: 120,
 	y: canvas.height / 2,		//플레이어 초기위치
 	radius: 10,		//플레이어 반지름
@@ -466,9 +466,10 @@ function draw() {
 				if (boss.hp <= 0) {		//보스 피가 0이하일시
 					boss.hp = 0;
 					score = (4500 - boss.hp) + 500 + player.life * 500;
-					alert("YOU WIN \nScore :" + score);
-					location.reload();
-					return;		//게임 종료
+					ismaxscore();
+					alert("YOU WIN \nScore :" + score + "\nYour Maxscore : " + maxscore);
+					theEndGame();
+					return;
 				}
 			}
 		}
@@ -478,10 +479,11 @@ function draw() {
 		score = (4500 - boss.hp) + 500 + player.life * 500;
 	}
 
+	ismaxscore();
+
 	if (player.life <= 0) {
-		alert("Game Over \nScore : " + score);
-		alert.center
-		location.reload();
+		alert("Game Over \nScore : " + score + "\nMaxscore : " + maxscore);
+		theEndGame();
 		return;
 	}		//플레이어 목숨이 다할시, 게임 종료
 
@@ -490,7 +492,32 @@ function draw() {
 
 if (!gamestart) {
 	drawStart();
-}		//게임이 시작 안했을시, 메시지를 그리는 함수실행
+}else{	//게임이 시작 안했을시, 메시지를 그리는 함수실행
+	
+}		
+
+function theEndGame(){
+	player = {
+		x: 120,
+		y: canvas.height / 2,		//플레이어 초기위치
+		radius: 10,		//플레이어 반지름
+		speed: 5,		//이동속도
+		color: "blue",		//색
+		damage: 1,		//공격 데미지
+		life: 10,		//목숨
+		invincible: false		//무적상태 여부
+	}; //player객체 선언
+    ctx.clearRect(0, 0, canvas.width, canvas.height);
+	score = 0;		//점수
+	bullets = [];		//공격 배열
+	mobs = [];		//몹 배열
+	items = [];		//아이템 배열
+	attacks = [];		//보스 공격 배열
+	isfired = false;		//사격중 여부
+	clearInterval(interval);
+	gamestart = false;
+	drawStart();
+}
 
 function startGame() {
 	gamestart = true;
@@ -501,6 +528,12 @@ function startGame() {
 
 	draw();
 }		//스페이스바를 누르면 게임실행 변수를 true로 바꾸고, draw함수 실행
+
+function ismaxscore() {
+	if(maxscore < score) {
+		maxscore = score;
+	}
+}
 
 function submitForm() {
     // 폼의 값을 동적으로 설정
