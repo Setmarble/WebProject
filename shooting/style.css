@@ -1,8 +1,14 @@
-
-header h5{
-  margin: 0;
+#canvas {
+  background: #eee; display: block; margin: 0 auto;
+  border : 1px solid black;
 }
 
-body {
-  background-color: beige;
+#container{
+  width: 1300px;
+  height: 800px;
+}
+
+input {
+  position: relative;
+  left: 1000px;
 }
