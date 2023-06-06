@@ -1,17 +1,31 @@
 <!DOCTYPE html>
 <html lang="en">
+
 <head>
     <meta charset="UTF-8">
 
     <title>Document</title>
 
     <link rel="stylesheet" href="style1.css">
+    <Style>
+        .register {
+            width: 30%;
+            height: 900px;
+            background: white;
+            border-radius: 20px;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            flex-direction: column;
+        }
+    </Style>
 </head>
+
 <body>
     <div class="wrap">
         <div class="register">
-            <h2>회원가입</h2>
-            
+            <img src="./Image/Logo/Logo.png" width="450px" alt="logo;">
+
             <form id="submitForm" action="login.html" method="get">
                 <div class="login_id">
                     <h4>아이디 *</h4>
@@ -33,39 +47,39 @@
                     <h4>이메일</h4>
                     <input type="email" name="" id="" placeholder="Email">
                 </div>
-    
+
                 <div class="login_id">
                     <h4>생년월일</h4>
                     <input type="date" name="" id="" placeholder="Birth">
                 </div>
-    
-               
+
+
                 <div class="submit">
                     <input type="submit" value="회원가입" onclick="isSame()">
                 </div>
             </form>
-            
+
         </div>
     </div>
     <script>
         function isSame() {
-            if(document.getElementById('ID').value == ''){
+            if (document.getElementById('ID').value == '') {
                 alert('아이디를 입력해야 합니다.');
             }
-            else if(document.getElementById('pw').value!='' && document.getElementById('pwCheck').value!='') {
-                if(document.getElementById('pw').value!=document.getElementById('pwCheck').value) {
+            else if (document.getElementById('pw').value != '' && document.getElementById('pwCheck').value != '') {
+                if (document.getElementById('pw').value != document.getElementById('pwCheck').value) {
                     alert('비밀번호가 일치하지 않습니다.');
                 }
-            }else if(document.getElementById('pw').value=='' || document.getElementById('pwCheck').value=='') {
+            } else if (document.getElementById('pw').value == '' || document.getElementById('pwCheck').value == '') {
                 alert('비밀번호를 입력해야 합니다.');
-            }else if(document.getElementById('Nickname').value == ''){
+            } else if (document.getElementById('Nickname').value == '') {
                 alert('닉네임을 입력해야 합니다.');
-            } else{
+            } else {
                 const form = document.getElementById('submitForm');
                 form.submit();
             }
         }
- 
+
 
 
     </script>

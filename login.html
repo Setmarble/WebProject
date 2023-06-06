@@ -1,0 +1,58 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+
+    <title>Document</title>
+
+    <link rel="stylesheet" href="style1.css">
+</head>
+<body>
+    <div class="wrap">
+        <div class="login">
+            <img src="./Image/Logo/Logo.png" width="450px" alt="logo;">
+       
+            <div class="login_id">
+                <h4>아이디</h4>
+                <input type="id" name="username" id="username" placeholder="Id">
+            </div>
+
+            <div class="login_pw">
+                <h4>비밀번호</h4>
+                <input type="password" name="password" id="password" placeholder="Password">
+            </div>
+           
+            <div class="submit">
+                <input type="submit" onclick="login()" value="로그인">
+
+                <br><br>
+                <input type="submit" value="회원가입">
+            </div>
+        </div>
+    </div>
+</body>
+
+
+
+
+<script>
+    function login(){
+        var username = document.getElementById("username").value;
+        var password = document.getElementById("password").value;
+        var usernames = ["admin"];
+        var passwords = ["1234"];
+        
+        var idx = usernames.indexOf(username);
+
+        if(idx != -1 && passwords[idx] == password){
+            window.location.href = "login_main.html";
+        }
+        else{
+            alert("Login Failed");
+        }
+    }
+</script>
+
+
+
+</html>
