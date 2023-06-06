@@ -18,7 +18,7 @@ const boss = {
 	x: canvas.width - 240,
 	y: canvas.height / 2 - 40,		//보스 초기위치
 	radius: 30,		//보스 반지름
-	hp: 5000,		//보스 체력
+	hp: 4500,		//보스 체력
 	xspeed: 4,
 	yspeed: 4		//보스 이동속도
 };	//보스객체 선언
@@ -32,8 +32,7 @@ const keys = {
 
 var gamestart = false;	//게임 시작여부
 var score = 0;		//점수
-var mobcount = 0;		//잡은 일반몹 수
-var target = 50;		//보스페이즈까지 목표 몹수
+var target = 500;		//보스페이즈까지 목표 몹수
 var bullets = [];		//공격 배열
 var mobs = [];		//몹 배열
 var items = [];		//아이템 배열
@@ -345,7 +344,7 @@ function drawStart() {
 	ctx.font = "30px Arial";
 	ctx.fillStyle = "black";
 	ctx.textAlign = "center";
-	ctx.fillText("Space를 누르면 시작", canvas.width / 2, canvas.height / 2);
+	ctx.fillText("Space를 누르면 시작", canvas.width / 2, canvas.height / 2);			/////최고점수 만들기
 	ctx.closePath();
 }		//시작 전 메시지를 그리는 함수
 
@@ -396,38 +395,39 @@ function draw() {
 	}
 	moveMobs();		//몹 이동함수 실행
 
-	if (mobcount < target) {		//아직 목표가 안되서 일반몹을 잡아야될 경우
+	for (var i = 0; i < mobs.length; i++) {
+		const m = mobs[i];
+		for (var j = 0; j < bullets.length; j++) {
+			const b = bullets[j];
 
-		for (var i = 0; i < items.length; i++) {
-			drawItem(items[i]);		//아이템 배열내의 아이템을 그림
-			if (collisionDetectPI(player, items[i])) {		//아이템과 플레이어 충돌 판정
-				player.damage++;
-				items.splice(i, 1);
+			if (!m || !b) continue;
+
+			if (collisionDetectMB(m, b)) {		//플레이어 공격과 몹이 충돌하고, 몹의 체력이 0 이하가 될경우
+				mobs.splice(i, 1);
+				bullets.splice(j, 1);		//충돌한 몹과 총알을 배열에서 제거
 				i--;
-			}
-		}		//몹에서 떨궈진 아이템에 충돌하면, 그 아이템을 없애고 플레이어의 데미지를 올림
-
-		for (var i = 0; i < mobs.length; i++) {
-			const m = mobs[i];
-			for (var j = 0; j < bullets.length; j++) {
-				const b = bullets[j];
-
-				if (!m || !b) continue;
-
-				if (collisionDetectMB(m, b)) {		//플레이어 공격과 몹이 충돌하고, 몹의 체력이 0 이하가 될경우
-					mobs.splice(i, 1);
-					bullets.splice(j, 1);		//충돌한 몹과 총알을 배열에서 제거
-					i--;
-					j--;
-					score++;		//점수 증가
-					mobcount++;		//잡은 몹수 카운팅
-					if (player.damage < 10) {
-						dropItem(m);
-					}		//플레이어 데미지 상한은 10으로 두고, 그 상한까지는 몹이 죽은 위치에서 아이템이 드롭되게 함
+				j--;
+				if(score < 500){
+					score+=10;		//점수 증가
 				}
+				if (player.damage < 10) {
+					dropItem(m);
+				}		//플레이어 데미지 상한은 10으로 두고, 그 상한까지는 몹이 죽은 위치에서 아이템이 드롭되게 함
 			}
 		}
-	} else {	//몹 카운트를 다채워서 보스페이즈 시작
+	}
+
+	for (var i = 0; i < items.length; i++) {
+		drawItem(items[i]);		//아이템 배열내의 아이템을 그림
+		if (collisionDetectPI(player, items[i])) {		//아이템과 플레이어 충돌 판정
+			player.damage++;
+			items.splice(i, 1);
+			i--;
+		}
+	}		//몹에서 떨궈진 아이템에 충돌하면, 그 아이템을 없애고 플레이어의 데미지를 올림
+
+	if (score >= target) {		//아직 목표가 안되서 일반몹을 잡아야될 경우											/////수정
+	//몹 카운트를 다채워서 보스페이즈 시작
 		drawBoss();
 		drawBossHP();		//보스와 보스 체력정보 그림
 		moveAttacks();
@@ -462,7 +462,8 @@ function draw() {
 				i--;
 				boss.hp -= player.damage;		//충돌한 공격은 배열에서 제거하고, 보스 체력을 플레이어 데미지만큼 감소
 				if (boss.hp <= 0) {		//보스 피가 0이하일시
-					score = player.life * 450 + 500;		//플레이어 목숨 비례 스코어 증가
+					boss.hp = 0;
+					score = (4500 - boss.hp) + 500 + player.life * 500;
 					alert("YOU WIN \nScore :" + score);
 					location.reload();
 					return;		//게임 종료
@@ -471,12 +472,11 @@ function draw() {
 		}
 	}
 
+	if(score >= target) {
+		score = (4500 - boss.hp) + 500 + player.life * 500;
+	}
+
 	if (player.life <= 0) {
-		if(mobcount < target) {
-			score = mobcount * 10;
-		} else {
-			score = (500 - boss.hp) + 500;
-		}
 		alert("Game Over \nScore : " + score);
 		alert.center
 		location.reload();
@@ -493,7 +493,7 @@ if (!gamestart) {
 function startGame() {
 	gamestart = true;
 
-	if (mobcount < target) {
+	if (score < target) {
 		interval = setInterval(createMob, 500);
 	}	//target전까지 몹 계속 생성
 
