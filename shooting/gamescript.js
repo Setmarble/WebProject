@@ -479,9 +479,8 @@ function draw() {
 		score = (4500 - boss.hp) + 500 + player.life * 500;
 	}
 
-	ismaxscore();
-
 	if (player.life <= 0) {
+		ismaxscore();
 		alert("Game Over \nScore : " + score + "\nMaxscore : " + maxscore);
 		theEndGame();
 		return;
