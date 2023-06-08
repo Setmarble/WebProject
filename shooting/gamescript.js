@@ -463,7 +463,7 @@ function draw() {
 				bullets.splice(i, 1);
 				i--;
 				boss.hp -= player.damage;		//충돌한 공격은 배열에서 제거하고, 보스 체력을 플레이어 데미지만큼 감소
-				if (boss.hp <= 0) {		//보스 피가 0이하일시
+				if (boss.hp < 0.5) {		//보스 피가 0이하일시
 					boss.hp = 0;
 					score = (4500 - boss.hp) + 500 + player.life * 500;
 					ismaxscore();
@@ -479,9 +479,8 @@ function draw() {
 		score = (4500 - boss.hp) + 500 + player.life * 500;
 	}
 
-	ismaxscore();
-
 	if (player.life <= 0) {
+		ismaxscore();
 		alert("Game Over \nScore : " + score + "\nMaxscore : " + maxscore);
 		theEndGame();
 		return;
